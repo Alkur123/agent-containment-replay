@@ -115,6 +115,24 @@ from behavioural inference.
 
 ---
 
+## A pre-registered test against held-out data
+
+[`PREREGISTRATION_reality_discount_detector.md`](PREREGISTRATION_reality_discount_detector.md)
+records, **before the data exists**, a threshold, a scoring rule and four
+falsifiable predictions for a detector aimed at the reasoning shape in the
+`anthropic-i2-mythos5` trajectory — the model recognising it might be on the real
+internet, stating that publishing would be wrong, discounting that on two false
+tells, and proceeding.
+
+Anthropic has committed to releasing a lightly redacted transcript of that
+incident. The detector was built from the *summary* in the disclosure; the
+transcript is held-out. The registration names which prediction is most likely to
+fail and why, commits to publishing the outcome either way, and commits to **not**
+patching-and-re-running on failure — which would reproduce exactly the
+circularity this repository exists to escape.
+
+It is here so that the timestamp is checkable by someone other than its author.
+
 ## Suggested protocol
 
 Score a monitor in three configurations. The gap between them is more
