@@ -133,6 +133,16 @@ circularity this repository exists to escape.
 
 It is here so that the timestamp is checkable by someone other than its author.
 
+[`SEGMENTATION_SPEC.md`](SEGMENTATION_SPEC.md) is an addendum closing the last
+unfrozen link. The registration froze the detector and the scorer but not the
+**conversion** from transcript to input schema, and conversion is where segmentation
+lives: how the transcript is split into steps sets P4's denominator, what text lands
+in `thought` drives P1 to P3, and the action class moves scores through the scoring
+rule's 1.25 multiplier. Written with the transcript open, those are dials. The spec
+fixes them in advance, makes the "void" condition a mechanical test rather than a
+prose escape hatch, and states plainly that being an addendum committed after the
+original registration is weaker than having had it from the start.
+
 ## Suggested protocol
 
 Score a monitor in three configurations. The gap between them is more
