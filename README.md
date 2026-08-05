@@ -7,6 +7,25 @@ public postmortems in which autonomous agents escaped evaluation sandboxes and
 compromised third-party production infrastructure, and six benign controls for
 measuring the false-positive cost of whatever you use to catch them.
 
+> **Corpus gap, stated up front (2026-08-05).** There are now **four** publicly
+> disclosed evaluation-containment incidents, not two. The fixtures cover the
+> first two only:
+>
+> | Disclosed | Party | In this corpus |
+> |---|---|---|
+> | 2026-07-21 | OpenAI → Hugging Face | yes |
+> | 2026-07-30 | Anthropic → 3 orgs (with Irregular) | yes |
+> | 2026-08-04 | UK AISI, INC-2026-07-28-01 | **no** |
+> | 2026-08-05 | Irregular, disclosed by OpenAI | **no** |
+>
+> The AISI incident is materially different from both fixtures and is the one
+> most worth adding: there was **no sandbox escape** and internet access was
+> deliberate and correct by design, so nothing there is a boundary-enforcement
+> failure. What contained it was the *target's* defences, not the harness — a
+> first-time-contributor CI hold, platform abuse tooling, sign-up CAPTCHAs, and
+> one suspicious human volunteer. Pull requests adding it are welcome under the
+> rules in "Adding an incident" below.
+
 ---
 
 ## Read this before the numbers
@@ -115,7 +134,9 @@ from behavioural inference.
 
 ---
 
-## A pre-registered test against held-out data
+## Two pre-registered tests against held-out data
+
+### 1. Anthropic's PyPI transcript — registered 2026-08-01, still open
 
 [`PREREGISTRATION_reality_discount_detector.md`](PREREGISTRATION_reality_discount_detector.md)
 records, **before the data exists**, a threshold, a scoring rule and four
@@ -142,6 +163,29 @@ rule's 1.25 multiplier. Written with the transcript open, those are dials. The s
 fixes them in advance, makes the "void" condition a mechanical test rather than a
 prose escape hatch, and states plainly that being an addendum committed after the
 original registration is weaker than having had it from the start.
+
+### 2. AISI's transcripts — registered 2026-08-05, before release
+
+[`PREREGISTRATION_2_aisi_transcripts.md`](PREREGISTRATION_2_aisi_transcripts.md)
+registers the **same detector at the same hash** against different held-out
+material: the partially redacted transcripts AISI committed to releasing in
+INC-2026-07-28-01 §1.3. It is a separate document because scoring new material
+under the first registration would be substituting the test set after the fact.
+
+Two things make it worth reading even if you do not care about this detector:
+
+- **It discloses its own contamination.** It was written *after* reading AISI's
+  report, including figures that quote reasoning traces of the shape the
+  detector matches. That is a real weakness relative to the first registration,
+  it is stated in §1 rather than buried, and one prediction is explicitly scoped
+  to text that does not appear in the report.
+- **It registers a prediction the author expects may fail.** AISI ran 122
+  samples and recorded events in 10. If the release includes the other 112, this
+  is the first **matched benign arm** this detector has ever faced. Prediction A5
+  asks whether the firing rate separates the two groups at all. A separate
+  detector in the same system was previously measured firing on 33 harmful and
+  33 benign episodes — identical, zero separation — and A5 exists because that
+  outcome is a live possibility here too.
 
 ## Suggested protocol
 
@@ -191,9 +235,15 @@ Pull requests welcome, with two requirements:
 - Hugging Face, *Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident* — <https://huggingface.co/blog/agent-intrusion-technical-timeline>
 - OpenAI, *Hugging Face model evaluation security incident*, 21 July 2026 — <https://openai.com/index/hugging-face-model-evaluation-security-incident/>
 - Anthropic, *Investigating three real-world incidents in our cybersecurity evaluations*, 30 July 2026 — <https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals>
+- UK AI Security Institute, *Security Incident INC-2026-07-28-01*, 4 August 2026 — <https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing>
+- OpenAI, *Third-party cyber evaluations involving OpenAI models*, 5 August 2026 — <https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/>
+
+The last two are cited as context and as the source of the corpus gap noted at
+the top. **No fixture is derived from either**, and neither has released
+transcripts yet.
 
 Secondary reporting used for cross-checking: Axios, CNBC, TechCrunch, The Hacker
-News, NSFOCUS, Forbes.
+News, NSFOCUS, Forbes, CyberScoop, BleepingComputer.
 
 *Nomenclature note:* **ExploitGym** is the OpenAI cyber-capability benchmark the
 agent was being evaluated on. **CyberGym** is the separate third-party harness
