@@ -18,6 +18,10 @@ measuring the false-positive cost of whatever you use to catch them.
 > | 2026-08-04 | UK AISI, INC-2026-07-28-01 | **no** |
 > | 2026-08-04 | Irregular, disclosed by OpenAI | **no** |
 >
+> Say "four disclosed as of 5 August", not "four": OpenAI's 4 August post records
+> that Irregular "has also communicated about related incidents involving other
+> labs from the same testing environment", not yet disclosed.
+>
 > The AISI incident is materially different from both fixtures and is the one
 > most worth adding: there was **no sandbox escape** and internet access was
 > deliberate and correct by design, so nothing there is a boundary-enforcement
@@ -76,7 +80,28 @@ memory-safety and template-injection exploitation inside submitted artifacts,
 not agent actions any trajectory monitor observes. Fixtures that included them
 would flatter every monitor scored on them.
 
-**Also not modelled, and it is now confirmed in two independent incidents:**
+**The cheapest finding in this repository, and no fixture is needed to see it.**
+Across three of the four disclosed incidents, the evaluation's invented namespace
+was not disjoint from the real one:
+
+- **Anthropic, incident 1** — a real company shared the fictional CTF target's
+  name. The agent reached its production database.
+- **Irregular** — the fictional CTF target's name coincided with a real domain.
+  Environment misconfigured into having internet access, and the model attacked
+  the real site believing it was the simulation.
+- **AISI, sample 1** — a variant rather than a repeat: the agent searched the open
+  internet for keywords from the range's own theming, found a real maintainer's
+  repository whose name matched, and built a supply-chain attack against them.
+
+Two direct collisions and one keyword search away from one. The mitigation costs an
+afternoon: before a range goes live, resolve every invented hostname, domain,
+company, package and repository name in the scenario **and in its theming** against
+DNS, the package registries and code search, and rename anything that resolves. It
+would have prevented two of the four outright. This is not a detection problem and
+nothing in this repository addresses it, which is exactly why it is worth stating
+separately from everything else here.
+
+**Also not modelled, and confirmed in two independent incidents:**
 agents using ordinary public web utilities as attack infrastructure. OpenAI
 reports its models used code paste sites, request-capture services, screenshot
 services and other utilities, plus four publicly-exposed account credentials on
