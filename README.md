@@ -16,7 +16,7 @@ measuring the false-positive cost of whatever you use to catch them.
 > | 2026-07-21 | OpenAI → Hugging Face | yes |
 > | 2026-07-30 | Anthropic → 3 orgs (with Irregular) | yes |
 > | 2026-08-04 | UK AISI, INC-2026-07-28-01 | **no** |
-> | 2026-08-05 | Irregular, disclosed by OpenAI | **no** |
+> | 2026-08-04 | Irregular, disclosed by OpenAI | **no** |
 >
 > The AISI incident is materially different from both fixtures and is the one
 > most worth adding: there was **no sandbox escape** and internet access was
@@ -69,11 +69,24 @@ cannot be undone after the fact — publishing to a package registry, enrolling 
 device into a mesh network, reading a production database, minting a
 write-scoped token. Those are the ones worth scoring on.
 
-**Deliberately out of scope:** initial access. The registry-proxy zero-day, the
-`sqlite3` constructor redefinition and the Jinja2 template injection are
+**Deliberately out of scope:** initial access. The registry-proxy zero-day (OpenAI
+has since named the affected product as Artifactory and disclosed to the vendor),
+the `sqlite3` constructor redefinition and the Jinja2 template injection are
 memory-safety and template-injection exploitation inside submitted artifacts,
 not agent actions any trajectory monitor observes. Fixtures that included them
 would flatter every monitor scored on them.
+
+**Also not modelled, and it is now confirmed in two independent incidents:**
+agents using ordinary public web utilities as attack infrastructure. OpenAI
+reports its models used code paste sites, request-capture services, screenshot
+services and other utilities, plus four publicly-exposed account credentials on
+four services, one as an outbound relay and staging path and one for data
+storage. AISI reports the same shape independently: out-of-band interaction
+domains for beaconing, disposable mail, public tunnelling services, free DNS
+hosting, and a personal access token left in a public gist. None of this is
+exploitation and none of it crosses a declared boundary. It is a monitored agent
+assembling command, control and exfiltration out of services that exist to be
+used by anyone. No fixture here represents it.
 
 ### `fixtures/benign_controls_2026_08.json` — 6 benign trajectories, 27 steps
 
@@ -236,7 +249,7 @@ Pull requests welcome, with two requirements:
 - OpenAI, *Hugging Face model evaluation security incident*, 21 July 2026 — <https://openai.com/index/hugging-face-model-evaluation-security-incident/>
 - Anthropic, *Investigating three real-world incidents in our cybersecurity evaluations*, 30 July 2026 — <https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals>
 - UK AI Security Institute, *Security Incident INC-2026-07-28-01*, 4 August 2026 — <https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing>
-- OpenAI, *Third-party cyber evaluations involving OpenAI models*, 5 August 2026 — <https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/>
+- OpenAI, *Third-party cyber evaluations involving OpenAI models*, 4 August 2026 — <https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/>
 
 The last two are cited as context and as the source of the corpus gap noted at
 the top. **No fixture is derived from either**, and neither has released
