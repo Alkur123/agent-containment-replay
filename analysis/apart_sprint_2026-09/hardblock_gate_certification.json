@@ -1,0 +1,136 @@
+{
+  "naive": {
+    "label": "naive",
+    "r1_r2": {
+      "gate": "r12_hardblock_chain_openai_hf_2026_07_naive",
+      "passed": false,
+      "distinct_pramana": [
+        "anumana"
+      ],
+      "substrates": [
+        "credential_endpoint_literals",
+        "secret_taint_and_egress_flow",
+        "sensitive_path_and_pattern_list"
+      ],
+      "shared_substrate_pairs": [],
+      "effective_independent_arms": 3,
+      "failures": [
+        "R1 distinct-pramana floor: gate 'r12_hardblock_chain_openai_hf_2026_07_naive' draws from 1 distinct pramana (['anumana']); requires >= 2. Corroboration by the same means twice is not corroboration."
+      ],
+      "advisories": []
+    },
+    "r5": {
+      "gate": "r12_hardblock_chain_openai_hf_2026_07_naive",
+      "passed": true,
+      "findings": [
+        {
+          "rule": "R5-a",
+          "severity": "ADVISORY",
+          "reason": "arm 'secret_exfil_flow' declares no substrate_class, so its dependence partition was defaulted to its substrate 'secret_taint_and_egress_flow'. That is the finer partition, so R5-a under-approximates for this arm: a class it shares with an arm on a DIFFERENT substrate cannot be seen from here."
+        },
+        {
+          "rule": "R5-a",
+          "severity": "ADVISORY",
+          "reason": "arm 'capability_laundering' declares no substrate_class, so its dependence partition was defaulted to its substrate 'sensitive_path_and_pattern_list'. That is the finer partition, so R5-a under-approximates for this arm: a class it shares with an arm on a DIFFERENT substrate cannot be seen from here."
+        },
+        {
+          "rule": "R5-a",
+          "severity": "ADVISORY",
+          "reason": "arm 'credential_endpoint' declares no substrate_class, so its dependence partition was defaulted to its substrate 'credential_endpoint_literals'. That is the finer partition, so R5-a under-approximates for this arm: a class it shares with an arm on a DIFFERENT substrate cannot be seen from here."
+        },
+        {
+          "rule": "R5-a",
+          "severity": "OK",
+          "reason": "no substrate class of 'r12_hardblock_chain_openai_hf_2026_07_naive' holds two or more readings (3 class(es) over 3 arm(s)), so the aggregation licence is not engaged: a sum across classes is licit by construction."
+        },
+        {
+          "rule": "R5-e",
+          "severity": "OK",
+          "reason": "no arm of 'r12_hardblock_chain_openai_hf_2026_07_naive' declares a replicate_group, so every arm counts as its own reading and R5-a's replicate exemption is not engaged."
+        },
+        {
+          "rule": "R5-d",
+          "severity": "ADVISORY",
+          "reason": "no function coverage declared for 'r12_hardblock_chain_openai_hf_2026_07_naive', so whether any detection function has cross-substrate redundancy is unattested. Half of 'overlap the functions, separate the substrates' cannot be checked without it."
+        },
+        {
+          "rule": "R5-b",
+          "severity": "OK",
+          "reason": "no arm of 'r12_hardblock_chain_openai_hf_2026_07_naive' declares an alternate, so no substitution claim is made and none needs licensing."
+        },
+        {
+          "rule": "R5-c",
+          "severity": "OK",
+          "reason": "no arm of 'r12_hardblock_chain_openai_hf_2026_07_naive' declares an alternate, so no substratum claim needs verifying."
+        },
+        {
+          "rule": "R6",
+          "severity": "OK",
+          "reason": "no evidence-mass arithmetic to certify: 'r12_hardblock_chain_openai_hf_2026_07_naive' combines by and, which carries no shares to preserve."
+        }
+      ]
+    }
+  },
+  "coupling_aware": {
+    "label": "coupling_aware",
+    "r1_r2": {
+      "gate": "r12_hardblock_chain_openai_hf_2026_07_coupling_aware",
+      "passed": false,
+      "distinct_pramana": [
+        "anumana"
+      ],
+      "substrates": [
+        "credential_endpoint_literals",
+        "secret_taint_and_egress_flow",
+        "sensitive_path_and_pattern_list"
+      ],
+      "shared_substrate_pairs": [],
+      "effective_independent_arms": 3,
+      "failures": [
+        "R1 distinct-pramana floor: gate 'r12_hardblock_chain_openai_hf_2026_07_coupling_aware' draws from 1 distinct pramana (['anumana']); requires >= 2. Corroboration by the same means twice is not corroboration."
+      ],
+      "advisories": []
+    },
+    "r5": {
+      "gate": "r12_hardblock_chain_openai_hf_2026_07_coupling_aware",
+      "passed": true,
+      "findings": [
+        {
+          "rule": "R5-a",
+          "severity": "ADVISORY",
+          "reason": "arm 'capability_laundering' declares no substrate_class, so its dependence partition was defaulted to its substrate 'sensitive_path_and_pattern_list'. That is the finer partition, so R5-a under-approximates for this arm: a class it shares with an arm on a DIFFERENT substrate cannot be seen from here."
+        },
+        {
+          "rule": "R5-a",
+          "severity": "OK",
+          "reason": "substrate class 'egress_flow_or_credential_endpoint' holds arms ['credential_endpoint', 'secret_exfil_flow'] and combines them by and, which is bounded by the weakest arm, so no arm stands in for a correlated neighbour."
+        },
+        {
+          "rule": "R5-e",
+          "severity": "OK",
+          "reason": "no arm of 'r12_hardblock_chain_openai_hf_2026_07_coupling_aware' declares a replicate_group, so every arm counts as its own reading and R5-a's replicate exemption is not engaged."
+        },
+        {
+          "rule": "R5-d",
+          "severity": "ADVISORY",
+          "reason": "no function coverage declared for 'r12_hardblock_chain_openai_hf_2026_07_coupling_aware', so whether any detection function has cross-substrate redundancy is unattested. Half of 'overlap the functions, separate the substrates' cannot be checked without it."
+        },
+        {
+          "rule": "R5-b",
+          "severity": "OK",
+          "reason": "no arm of 'r12_hardblock_chain_openai_hf_2026_07_coupling_aware' declares an alternate, so no substitution claim is made and none needs licensing."
+        },
+        {
+          "rule": "R5-c",
+          "severity": "OK",
+          "reason": "no arm of 'r12_hardblock_chain_openai_hf_2026_07_coupling_aware' declares an alternate, so no substratum claim needs verifying."
+        },
+        {
+          "rule": "R6",
+          "severity": "OK",
+          "reason": "no evidence-mass arithmetic to certify: 'r12_hardblock_chain_openai_hf_2026_07_coupling_aware' combines by and, which carries no shares to preserve."
+        }
+      ]
+    }
+  }
+}

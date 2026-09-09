@@ -60,3 +60,16 @@ What you can verify from this repo alone:
   observed, the honest upper bound is about 3.5% by the rule of three, and none
   of the 18 cloud-CLI-shaped steps surface a literal metadata-endpoint string
   the way a cloud SDK's own internal fetch would if modeled as its own action.
+- `hardblock_gate_certification.py` / `hardblock_gate_certification.json` —
+  points this project's separate build-time certification family
+  (`engine.pramana`, `engine.vikalpa`, also not part of this repo's MIT
+  release) at the three hard-block rules above, the first time that family has
+  been run against this composition rather than the two it already covers
+  elsewhere (a content-governance gate, a soft drift aggregate). Result is
+  mixed, not a clean pass: all three rules are the same means of knowledge
+  (deterministic rule-chains), so the independence floor on epistemic
+  diversity fails, but they reduce to three distinct mechanisms with no shared
+  point of failure, and their combinator is licensed. A real coupling
+  (`secret_exfil_flow`'s taint source calls `credential_endpoint`'s own
+  detector) was found by reading `engine/ring12/drift.py` directly, stated in
+  the script as manually verified, not caught by an automated tool.
