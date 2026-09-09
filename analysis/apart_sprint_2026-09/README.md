@@ -4,7 +4,9 @@ This folder documents the analysis behind a submission to the AI Incident Respon
 Sprint, Track 1 (Containment). It tags the 16-step `eval_containment_2026_07.json`
 fixture in this repo against Hugging Face's own published kill-chain phase taxonomy
 (recon, rce, dropper, exfil, c2, evasion, k8s, supply-chain, tailscale) and reports
-where two independent controls would have ended the session.
+where two independent controls would have ended the session, then ablates both of
+them (disable each in turn, and disable both at once) to check that the redundancy
+claim holds up as a real ablation, not just a lucky ordering.
 
 ## What is and is not reproducible from this repo alone
 
@@ -27,12 +29,26 @@ What you can verify from this repo alone:
 - The phase tags (`PHASE_TAGS` in the script) are stated as judgment calls where they
   are judgment calls; three of sixteen steps are marked with a `~` for a phase pairing
   rather than forced into one bucket.
+- The ablation result file records four full arms (disable rule 1, disable rule 2,
+  disable both, and disable rule 2 on a fresh session from step 4), each a real
+  `Ring12Verifier` run, no signals zeroed out.
 
 ## Files
 
 - `hf_phase_matrix.py` — the analysis script (requires the private engine to run).
+  Now includes `run_ablation()` (`--ablation` flag), added after the initial
+  submission to test the redundancy claim directly instead of inferring it from a
+  single restart.
 - `hf_phase_matrix.json` — full 16-step results under both a declared and an
   undeclared scope configuration.
 - `hf_phase_matrix_gapcheck.json` — a second run starting fresh at step 4, used to
   confirm that the k8s-phase containment is a real, independent finding and not an
   artifact of the earlier kill masking it.
+- `hf_phase_matrix_ablation.json` — the four-arm ablation. Disabling either of the
+  two headline rules (`secret_exfil_flow`, `capability_laundering`) individually
+  confirms the other alone accounts for the entire remainder of the chain, not
+  just its own trigger point. Disabling both surfaces a third rule,
+  `credential_endpoint`, that is off by default in production and had simply never
+  had a chance to fire in the earlier runs. Its default-off status is a reasoned
+  choice in its own source comment, not a completed measurement, and this repo
+  does not claim otherwise.

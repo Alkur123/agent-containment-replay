@@ -174,8 +174,106 @@ async def run_gap_check() -> None:
     print("\nwrote eval/results/hf_phase_matrix_gapcheck.json")
 
 
+class _EnvOverride:
+    """Set one env var for the duration of a run, restore it after. The
+    toggle functions in engine.ring12.policy read os.environ fresh on every
+    call (no caching), so flipping the var between async runs is sufficient
+    -- no need to reload any module."""
+
+    def __init__(self, name: str, value: str):
+        self.name, self.value = name, value
+        self._prev = None
+        self._had_prev = False
+
+    def __enter__(self):
+        self._had_prev = self.name in os.environ
+        self._prev = os.environ.get(self.name)
+        os.environ[self.name] = self.value
+        return self
+
+    def __exit__(self, *exc):
+        if self._had_prev:
+            os.environ[self.name] = self._prev
+        else:
+            os.environ.pop(self.name, None)
+
+
+async def run_ablation() -> None:
+    """The ablation flagged as future work in the report (Discussion §5):
+    disable each of the two catching rules in turn and confirm what -- if
+    anything -- catches the REST of the chain, not just the rule's own
+    trigger point.
+
+    Four arms, all against the undeclared-scope ("none") config, since the
+    main run already showed declared vs undeclared makes no difference to
+    either rule's verdict:
+
+      A. secret_exfil_flow OFF, capability_laundering ON, full 16-step
+         trajectory from step 0. Does rule 2 alone catch the chain, and
+         where?
+      B. secret_exfil_flow ON, capability_laundering OFF, full 16-step
+         trajectory from step 0. Confirms rule 1's step-2 catch does not
+         depend on rule 2 being present (expected: identical to baseline).
+      C. BOTH off, full 16-step trajectory from step 0. Does anything else
+         in the verifier (a different hard-block, or the soft aggregate)
+         backstop the two rules this report is about?
+      D. capability_laundering OFF, fresh session starting at step 4 (the
+         same bypass the gap-check used) -- the direct complement of the
+         gap check. The gap check showed rule 2 catches step 4 on its own;
+         this asks whether it, or anything else, catches steps 4-15 when
+         rule 2 is removed.
+    """
+    data = json.load(open(FIXTURE, encoding="utf-8"))
+    inc = next(i for i in data["incidents"] if i["id"] == INCIDENT_ID)
+    results: dict[str, list[dict]] = {}
+
+    print(f"\n{'='*90}\nABLATION A: secret_exfil_flow OFF, capability_laundering ON, "
+          f"full trajectory from step 0\n{'='*90}")
+    with _EnvOverride("R12_SECRET_EXFIL_HARDBLOCK", "0"):
+        rows_a = await run_config(inc, "none")
+    results["A_rule1_off"] = rows_a
+    for r in rows_a:
+        print(f"step {r['step']:>2} [{r['phase']:<16}] verdict={r['verdict']:<12} "
+              f"hard_block={r['hard_block']} reason={r['reason']}")
+
+    print(f"\n{'='*90}\nABLATION B: secret_exfil_flow ON, capability_laundering OFF, "
+          f"full trajectory from step 0\n{'='*90}")
+    with _EnvOverride("R12_CAPABILITY_LAUNDERING_HARDBLOCK", "0"):
+        rows_b = await run_config(inc, "none")
+    results["B_rule2_off"] = rows_b
+    for r in rows_b:
+        print(f"step {r['step']:>2} [{r['phase']:<16}] verdict={r['verdict']:<12} "
+              f"hard_block={r['hard_block']} reason={r['reason']}")
+
+    print(f"\n{'='*90}\nABLATION C: BOTH rules OFF, full trajectory from step 0\n{'='*90}")
+    with _EnvOverride("R12_SECRET_EXFIL_HARDBLOCK", "0"), \
+         _EnvOverride("R12_CAPABILITY_LAUNDERING_HARDBLOCK", "0"):
+        rows_c = await run_config(inc, "none")
+    results["C_both_off"] = rows_c
+    for r in rows_c:
+        print(f"step {r['step']:>2} [{r['phase']:<16}] verdict={r['verdict']:<12} "
+              f"hard_block={r['hard_block']} reason={r['reason']}")
+
+    print(f"\n{'='*90}\nABLATION D: capability_laundering OFF, fresh session from step 4 "
+          f"(complement of the gap check)\n{'='*90}")
+    with _EnvOverride("R12_CAPABILITY_LAUNDERING_HARDBLOCK", "0"):
+        rows_d = await run_from_step(inc, 4, "ablation-d-norule2")
+    results["D_rule2_off_from_step4"] = rows_d
+    for r in rows_d:
+        print(f"step {r['step']:>2} [{r['phase']:<16}] verdict={r['verdict']:<12} "
+              f"{r.get('reason','')}")
+
+    json.dump(results, open("eval/results/hf_phase_matrix_ablation.json", "w", encoding="utf-8"),
+               indent=2)
+    print("\nwrote eval/results/hf_phase_matrix_ablation.json")
+
+
 if __name__ == "__main__" and "--gapcheck" in sys.argv:
     sys.exit(asyncio.run(run_gap_check()))
+
+
+if __name__ == "__main__" and "--ablation" in sys.argv:
+    sys.exit(asyncio.run(run_ablation()))
 
 
 if __name__ == "__main__":
