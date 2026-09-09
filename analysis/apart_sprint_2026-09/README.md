@@ -4,9 +4,19 @@ This folder documents the analysis behind a submission to the AI Incident Respon
 Sprint, Track 1 (Containment). It tags the 16-step `eval_containment_2026_07.json`
 fixture in this repo against Hugging Face's own published kill-chain phase taxonomy
 (recon, rce, dropper, exfil, c2, evasion, k8s, supply-chain, tailscale) and reports
-where two independent controls would have ended the session, then ablates both of
-them (disable each in turn, and disable both at once) to check that the redundancy
-claim holds up as a real ablation, not just a lucky ordering.
+where two declaration-independent controls would have ended the session, then ablates
+both of them (disable each in turn, and disable both at once) to check that the
+redundancy claim holds up as a real ablation, not just a lucky ordering.
+
+The headline is that the redundancy claim was then tested a **second** way, and the two
+tests disagree. The ablation says the controls are behaviourally redundant; the
+build-time certification below says they are substrate-independent but **epistemically
+identical**, all pattern matchers, so a single obfuscation could defeat all of them.
+Both are true of the same gate, and neither method finds the other's answer. Note the
+wording carefully: "independent" here means *declaration-independent* (they need no
+pre-declared scope to fire) and *substrate-independent* (three distinct mechanisms, no
+shared point of failure). It does **not** mean independent in the sense that would
+survive an adaptive adversary, and this analysis says so on its own evidence.
 
 ## What is and is not reproducible from this repo alone
 
