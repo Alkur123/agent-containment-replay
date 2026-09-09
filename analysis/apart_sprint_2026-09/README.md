@@ -54,12 +54,13 @@ What you can verify from this repo alone:
   does not claim otherwise.
 - `credential_endpoint_fp_probe.py` / `credential_endpoint_fp_probe.json` — a
   first measurement toward that gap, on the external SLEIGHT-Bench corpus this
-  project's cost figure already uses: of 86 benign episodes (18 making
-  AWS/cloud-CLI-shaped calls), turning `credential_endpoint` on adds zero new
-  kills. Reported as a first data point, not full validation: at n=86 zero
-  observed, the honest upper bound is about 3.5% by the rule of three, and none
-  of the 18 cloud-CLI-shaped steps surface a literal metadata-endpoint string
-  the way a cloud SDK's own internal fetch would if modeled as its own action.
+  project's cost figure already uses: of 86 benign episodes (12 of which make
+  AWS/cloud-CLI-shaped calls, 18 such steps in all), turning
+  `credential_endpoint` on adds zero new kills. Reported as a first data point,
+  not full validation: at n=86 zero observed, the honest upper bound is about
+  3.5% by the rule of three, and none of those 18 steps surface a literal
+  metadata-endpoint string the way a cloud SDK's own internal fetch would if
+  modeled as its own action.
 - `hardblock_gate_certification.py` / `hardblock_gate_certification.json` —
   points this project's separate build-time certification family
   (`engine.pramana`, `engine.vikalpa`, also not part of this repo's MIT
