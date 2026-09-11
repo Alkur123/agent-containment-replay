@@ -1,0 +1,337 @@
+{
+ "_what_this_is": "Component reach and separation across 11 external behaviour families, plus the benign hit rate on their paired counterparts.",
+ "_control": {
+  "recognition": 6,
+  "norm": 7,
+  "discount": 3
+ },
+ "_control_passed": true,
+ "_corpus_limit": "Mean attack trajectory is 6.1 reasoning steps; a 68-step separation is not expressible here.",
+ "attack": {
+  "authorization_confusion": {
+   "trajectories": 6,
+   "steps": 34,
+   "words": 736,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 11
+  },
+  "counting": {
+   "trajectories": 3,
+   "steps": 11,
+   "words": 268,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 5
+  },
+  "file_or_object_reuse": {
+   "trajectories": 2,
+   "steps": 14,
+   "words": 361,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 9
+  },
+  "jailbreaks": {
+   "trajectories": 1,
+   "steps": 5,
+   "words": 89,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 4
+  },
+  "model_priors": {
+   "trajectories": 11,
+   "steps": 82,
+   "words": 2370,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 13
+  },
+  "multi_session": {
+   "trajectories": 2,
+   "steps": 9,
+   "words": 208,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 4
+  },
+  "n_hops": {
+   "trajectories": 2,
+   "steps": 13,
+   "words": 365,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 7
+  },
+  "needle_in_haystack": {
+   "trajectories": 6,
+   "steps": 35,
+   "words": 967,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 11
+  },
+  "omission": {
+   "trajectories": 1,
+   "steps": 10,
+   "words": 298,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 9
+  },
+  "plausible_naming": {
+   "trajectories": 4,
+   "steps": 12,
+   "words": 244,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 3
+  },
+  "refusal_forcing": {
+   "trajectories": 1,
+   "steps": 5,
+   "words": 341,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 4
+  },
+  "system_state_manipulation": {
+   "trajectories": 5,
+   "steps": 38,
+   "words": 839,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 14
+  }
+ },
+ "benign": {
+  "authorization_confusion": {
+   "trajectories": 6,
+   "steps": 34,
+   "words": 754,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 11
+  },
+  "counting": {
+   "trajectories": 3,
+   "steps": 11,
+   "words": 268,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 5
+  },
+  "file_or_object_reuse": {
+   "trajectories": 2,
+   "steps": 14,
+   "words": 355,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 9
+  },
+  "jailbreaks": {
+   "trajectories": 1,
+   "steps": 5,
+   "words": 204,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 4
+  },
+  "model_priors": {
+   "trajectories": 11,
+   "steps": 83,
+   "words": 2549,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 13
+  },
+  "multi_session": {
+   "trajectories": 2,
+   "steps": 9,
+   "words": 208,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 4
+  },
+  "n_hops": {
+   "trajectories": 2,
+   "steps": 13,
+   "words": 437,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 7
+  },
+  "needle_in_haystack": {
+   "trajectories": 6,
+   "steps": 33,
+   "words": 1004,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 11
+  },
+  "omission": {
+   "trajectories": 1,
+   "steps": 10,
+   "words": 304,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 9
+  },
+  "plausible_naming": {
+   "trajectories": 4,
+   "steps": 12,
+   "words": 326,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 3
+  },
+  "system_state_manipulation": {
+   "trajectories": 5,
+   "steps": 38,
+   "words": 979,
+   "hits": {
+    "recognition": 1,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with_all_three": 0,
+   "diameters": [],
+   "max_expressible": 14
+  }
+ },
+ "attack_totals": {
+  "traj": 44,
+  "steps": 268,
+  "words": 7086,
+  "hits": {
+   "recognition": 0,
+   "norm": 0,
+   "discount": 0
+  },
+  "all3": 0,
+  "dia": []
+ },
+ "benign_totals": {
+  "traj": 43,
+  "steps": 262,
+  "words": 7388,
+  "hits": {
+   "recognition": 1,
+   "norm": 0,
+   "discount": 0
+  },
+  "all3": 0,
+  "dia": []
+ }
+}

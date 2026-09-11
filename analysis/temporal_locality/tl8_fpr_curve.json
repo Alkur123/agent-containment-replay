@@ -1,0 +1,99 @@
+{
+ "_what_this_is": "Operator firing rate on benign sessions of controlled length, assembled from real benign agent trajectories.",
+ "_source": "nvidia/SWE-Hero-openhands-trajectories via TL-7",
+ "_assumption": "Sessions are concatenations of whole real trajectories; the external corpus maxes near 85 reasoning steps while the incident ran to 699.",
+ "benign_trajectories": 1021,
+ "benign_steps": 43528,
+ "measured_rate_per_step": {
+  "recognition": 4.594743613306377e-05,
+  "norm": 0.0020676346259878697,
+  "discount": 9.189487226612754e-05
+ },
+ "empirical": {
+  "41": {
+   "1": 0.0,
+   "10": 0.0,
+   "68": 0.0,
+   "100": 0.0,
+   "latch": 0.0
+  },
+  "100": {
+   "1": 0.0,
+   "10": 0.0,
+   "68": 0.0,
+   "100": 0.0,
+   "latch": 0.0
+  },
+  "200": {
+   "1": 0.0,
+   "10": 0.0,
+   "68": 0.0,
+   "100": 0.0,
+   "latch": 0.0
+  },
+  "400": {
+   "1": 0.0,
+   "10": 0.0,
+   "68": 0.0,
+   "100": 0.0,
+   "latch": 0.0
+  },
+  "699": {
+   "1": 0.0,
+   "10": 0.0,
+   "68": 0.0,
+   "100": 0.001,
+   "latch": 0.001
+  },
+  "1000": {
+   "1": 0.0,
+   "10": 0.0,
+   "68": 0.0,
+   "100": 0.0,
+   "latch": 0.0
+  },
+  "2000": {
+   "1": 0.0,
+   "10": 0.0,
+   "68": 0.0,
+   "100": 0.0,
+   "latch": 0.012
+  },
+  "5000": {
+   "1": 0.0,
+   "10": 0.0,
+   "68": 0.0,
+   "100": 0.0,
+   "latch": 0.052
+  }
+ },
+ "analytic_latch": {
+  "41": 5.758817410686897e-07,
+  "100": 7.840514904552623e-06,
+  "200": 5.647079152826622e-05,
+  "400": 0.00037008186081076053,
+  "699": 0.0015037711711916731,
+  "1000": 0.0034454447674438825,
+  "2000": 0.014506610904752073,
+  "5000": 0.07561554861690283
+ },
+ "latch_at_incident_length_PER_STEP_BIASED": 0.001,
+ "benign_words_per_step": 34.47484377871715,
+ "incident_words_per_step": 184.8,
+ "measured_rate_per_word": {
+  "recognition": 1.3327815617667619e-06,
+  "norm": 5.9975170279504284e-05,
+  "discount": 2.6655631235335237e-06
+ },
+ "analytic_latch_by_words": {
+  "10000": 0.0001570792349293107,
+  "50000": 0.007643174223426129,
+  "129179": 0.04605403120449308,
+  "250000": 0.1378429351335003,
+  "500000": 0.3581463299391108,
+  "1000000": 0.6850435868529992
+ },
+ "latch_at_incident_WORDS": 0.04605403120449308,
+ "_which_governs": "latch_at_incident_WORDS. The per-step figure is biased low because the benign corpus averages 34.5 words per step against the incident's 184.8.",
+ "_monte_carlo_note": "Empirical cells below ~0.5% are noise-limited at this trial count; the analytic column is the better estimate in that regime."
+}

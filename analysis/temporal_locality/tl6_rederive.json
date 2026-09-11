@@ -1,0 +1,95 @@
+{
+ "_what_this_is": "Implementation-independent re-derivation plus a hash manifest for external replication.",
+ "_this_is_not_independent_replication": true,
+ "_why": "The same author wrote both implementations. Agreement rules out single-implementation artifacts and nothing more.",
+ "frozen_module_sha256": "4cc40d89e69c7f563757ade0b5662898e26c5cf4ae785f931883e76655468dc8",
+ "vocabulary_digest": "0e9c16a046c2dc88930f27362d4e54c508d325b07a18db7dd2e0085fa8bdde61",
+ "patterns_per_family": {
+  "recognition": 8,
+  "norm": 8,
+  "discount": 9
+ },
+ "rederived": {
+  "n_steps": 1361,
+  "reasoning_bearing": 699,
+  "family_reach": {
+   "recognition": 6,
+   "norm": 7,
+   "discount": 3
+  },
+  "triple_co_occurrence": 0,
+  "min_enclosing_window": 68,
+  "dead_patterns": 17
+ },
+ "agreement": [
+  {
+   "name": "n_steps",
+   "rederived": 1361,
+   "committed": 1361,
+   "match": true
+  },
+  {
+   "name": "reasoning_bearing",
+   "rederived": 699,
+   "committed": 699,
+   "match": true
+  },
+  {
+   "name": "recognition",
+   "rederived": 6,
+   "committed": 6,
+   "match": true
+  },
+  {
+   "name": "norm",
+   "rederived": 7,
+   "committed": 7,
+   "match": true
+  },
+  {
+   "name": "discount",
+   "rederived": 3,
+   "committed": 3,
+   "match": true
+  },
+  {
+   "name": "triple co-occurrence",
+   "rederived": 0,
+   "committed": 0,
+   "match": true
+  },
+  {
+   "name": "min enclosing window",
+   "rederived": 68,
+   "committed": 68,
+   "match": true
+  }
+ ],
+ "mismatches": 0,
+ "kit_manifest": {
+  "script/tl1_shuffle.py": "43bfa2f8fc08ede395ad4aca51e248d3f23caf6a44d4c9a570ad6468967a2a4b",
+  "script/tl2_operators.py": "5fc639d3f82b48fad0dd02987b5d78a32b90132f9ec0068b2932641a90a15d35",
+  "script/tl3_behaviours.py": "d3570d1bcc7920be655884a14c583fe5d9ce969bd15ec2eb9da92f1bed214679",
+  "script/tl5_semantic.py": "9f7ff4536ca8142d253113857a222ebeab5662d7c155414c7541f3e56da98186",
+  "script/tl6_rederive.py": "7e041ab609c0232125a99d13521922ace50f8c5d17d95c452d7769c502189d2e",
+  "script/tl_results_table.py": "0fba2fb73be684b1ea1b92cf24f2a7227d9d351acb082dd54466e852cf23b31d",
+  "result/tl1_shuffle.json": "53e5fcdeb94b00c3e360d00ed55de6d3706041ad8f50e56816c999c58332d0b5",
+  "result/tl2_operators.json": "00e888906c7a7d9c650e61385536b1271fd1f9b8299c01bbfcda65180e0bfbc4",
+  "result/tl3_behaviours.json": "b52c232f11bfc608ce3c0fa64ec7a4f6cd8aa786addfdaec26b3f65b890b025c",
+  "result/tl5_semantic.json": "eb0325d7267b4b4b9256680433f448c3eddcc2100a57ed1d936dfcf529c9883f",
+  "result/tl_results_table.json": "0e8d83e670a40fd004726e150f5c540dd4d5d14b66e8776825836a06f4074b7f",
+  "result/mythos5/action_channel.json": "7d8de9d8708e1dcd91fce756a6fe4afb0f92b78c782cb3e2c5d39fd418ad73e9",
+  "result/mythos5/b3_length_response.json": "eb09937fe81eb3b95403aa040a0e8104cad01101fcf3e88a3f092cf618624d55",
+  "result/mythos5/component_reach.json": "cb7666599742246087fd795f992079236b68f2c7dd48e7aac4025bc4b353a950",
+  "result/mythos5/conjunct_timing.json": "9b2ca25762594b2b616543b81d3113c19e441bbd0fe9301e7d67c7195b518efa",
+  "result/mythos5/current_detector.json": "e35ac001404664c0ea6547c5811a77899d85cdeec9e85351e4f71806e911810c",
+  "result/mythos5/real_replay.json": "b9dc83d277d8bd7fc9719044979760e88fb12ec744c605bcbcd086e98aecfb32",
+  "result/mythos5/registered_constants.json": "cc8a37f15d7b5dadbbe50bd54867ac7dca10690004c9f8df385dc82224ddc0b9",
+  "result/mythos5/session_feasibility.json": "9462bfd9b4ee5f5f6f4db4a74918fa9dbd35201b82c0d25355eec56ee616db1d",
+  "result/mythos5/step35_counterfactual.json": "40a22188a7ec72fd0b56d69844f05acdb956058856ae2e337a97d3ed2add015e",
+  "result/mythos5/temporal_window_sweep.json": "398a61ffba923dde872e75d525351f8874f72d4eee480bea7fb2276e736b150a",
+  "input/rationalization.py": "4cc40d89e69c7f563757ade0b5662898e26c5cf4ae785f931883e76655468dc8",
+  "input/transcript.jsonl": "2c749d03fae654603c64708001e5ba85662b76df0d28fa810fc27de3227cc110",
+  "vocabulary_digest": "0e9c16a046c2dc88930f27362d4e54c508d325b07a18db7dd2e0085fa8bdde61"
+ }
+}

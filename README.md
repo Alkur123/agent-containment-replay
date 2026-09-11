@@ -2,6 +2,37 @@
 
 **Replayable trajectories reconstructed from the July 2026 frontier-lab agent-containment failures, plus benign controls.**
 
+> ## The pre-registered test has been scored, and it FAILED
+>
+> On **1 August 2026** this repository published a detector pinned by hash, with
+> a threshold, a scoring rule, four falsifiable predictions, a commitment to
+> publish the result either way, and a commitment **not** to patch and re-run on
+> failure. The transcript it targeted did not exist yet.
+>
+> On **9 September 2026** Anthropic released that transcript: 1,361 actions over
+> 10.42 hours. It was scored on **10 September**.
+>
+> **The detector fires on 0 of 1,361 steps. Prediction P1 fails, and with it the
+> registration.** The pre-committed consequence was applied rather than the
+> detector patched: the default is now off.
+>
+> **The reason is not the one we predicted.** The registration expected P1 to
+> fail because real reasoning is more verbose and less quotable than the
+> disclosure fragments the vocabulary was written against. Measured with the
+> conjunctive floor removed, the vocabulary reached all three families:
+> recognition on 6 steps, a norm statement on 7, a reality-discount on 3. They
+> never co-occur in a single step. The smallest window containing one of each
+> spans **68 steps**, or 371 under the causal ordering. The detector was not too
+> narrow. It was too *local*, and no amount of vocabulary would have helped.
+>
+> Being right about the outcome and wrong about the reason is what a
+> registration is for, and it is only visible because the scoring rule was fixed
+> before the data existed.
+>
+> Details: [`PREREGISTRATION_reality_discount_detector.md`](PREREGISTRATION_reality_discount_detector.md)
+> (results appended below the original text, which is unedited) and
+> [`analysis/reg1_mythos5/`](analysis/reg1_mythos5/).
+
 Ten agent trajectories in a single JSON schema: four reconstructed from the two
 public postmortems in which autonomous agents escaped evaluation sandboxes and
 compromised third-party production infrastructure, and six benign controls for
@@ -174,7 +205,7 @@ from behavioural inference.
 
 ## Two pre-registered tests against held-out data
 
-### 1. Anthropic's PyPI transcript — registered 2026-08-01, still open
+### 1. Anthropic's PyPI transcript — registered 2026-08-01, **SCORED 2026-09-10: FAILED**
 
 [`PREREGISTRATION_reality_discount_detector.md`](PREREGISTRATION_reality_discount_detector.md)
 records, **before the data exists**, a threshold, a scoring rule and four
@@ -183,12 +214,35 @@ falsifiable predictions for a detector aimed at the reasoning shape in the
 internet, stating that publishing would be wrong, discounting that on two false
 tells, and proceeding.
 
-Anthropic has committed to releasing a lightly redacted transcript of that
-incident. The detector was built from the *summary* in the disclosure; the
-transcript is held-out. The registration names which prediction is most likely to
-fail and why, commits to publishing the outcome either way, and commits to **not**
+The detector was built from the *summary* in the disclosure; the transcript was
+held-out. The registration names which prediction is most likely to fail and why,
+commits to publishing the outcome either way, and commits to **not**
 patching-and-re-running on failure — which would reproduce exactly the
 circularity this repository exists to escape.
+
+**Outcome.** The transcript was released 9 September 2026 and scored 10
+September, in the registered order: freeze, convert without reading the prose,
+commit the converter *before* scoring, run the mechanical void check, score, then
+read. The converter is committed at `9e18df2`, before any number was produced.
+The void condition did not trigger.
+
+| | registered | measured |
+|---|---|---|
+| P1 detector fires on the licence | expected to fail | **0 of 1,361 steps — FAILS** |
+| consequence if P1 fails | default flipped off, not patched | applied, `R12_RATIONALIZATION_ENABLED=0` |
+| stated reason P1 would fail | real reasoning less quotable than fragments | **wrong: vocabulary reached all three families** |
+
+What actually failed was the operator, not the vocabulary. Per-family reach with
+the conjunctive floor removed is 6 / 7 / 3 steps, triple co-occurrence is 0, and
+the minimum enclosing window is 68 steps. A conjunction evaluated on one step
+cannot span conjuncts assembled across hours.
+
+Follow-up work holds the reasoning blocks and their per-family counts exactly
+fixed and permutes only their arrangement: detection then moves from W=5
+(compressed) to W=100 (as released) to W=500 (expanded). Content fixed,
+arrangement varied, detection changes. Against 10,000 random rearrangements the
+observed 68 sits at the 60th percentile, so this incident is **not** unusually
+dispersed — the one-step horizon is the outlier, not the trajectory.
 
 It is here so that the timestamp is checkable by someone other than its author.
 

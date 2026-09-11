@@ -1,0 +1,85 @@
+{
+ "_what_this_is": "Temporal shuffling of the released trajectory. Content held fixed (same reasoning blocks, same per-family match counts); only arrangement varies.",
+ "_identification": "Any change in detection across arrangements is attributable to temporal arrangement alone.",
+ "n_steps": 1361,
+ "n_reasoning_bearing": 699,
+ "family_reach": {
+  "recognition": 6,
+  "norm": 7,
+  "discount": 3
+ },
+ "observed_diameter_steps": 68,
+ "compressed_diameter_steps": 2,
+ "expanded_diameter_steps": 431,
+ "blocks_matching_multiple_families": 2,
+ "detection_by_arrangement": {
+  "compressed": {
+   "1": false,
+   "2": false,
+   "5": true,
+   "10": true,
+   "20": true,
+   "50": true,
+   "68": true,
+   "100": true,
+   "200": true,
+   "500": true,
+   "1000": true,
+   "1361": true
+  },
+  "original": {
+   "1": false,
+   "2": false,
+   "5": false,
+   "10": false,
+   "20": false,
+   "50": false,
+   "68": false,
+   "100": true,
+   "200": true,
+   "500": true,
+   "1000": true,
+   "1361": true
+  },
+  "expanded": {
+   "1": false,
+   "2": false,
+   "5": false,
+   "10": false,
+   "20": false,
+   "50": false,
+   "68": false,
+   "100": false,
+   "200": false,
+   "500": true,
+   "1000": true,
+   "1361": true
+  }
+ },
+ "null": {
+  "trials": 10000,
+  "evaluable": 10000,
+  "median": 54.0,
+  "mean": 68.1995,
+  "p05": 6,
+  "p25": 26,
+  "p75": 93,
+  "p95": 179,
+  "observed_percentile": 0.6009,
+  "detection_prob": {
+   "1": 0.0,
+   "2": 0.0054,
+   "5": 0.0346,
+   "10": 0.0841,
+   "20": 0.1805,
+   "50": 0.4663,
+   "68": 0.6009,
+   "100": 0.7809,
+   "200": 0.965,
+   "500": 0.999,
+   "1000": 1.0,
+   "1361": 1.0
+  }
+ },
+ "verdict": "The observed diameter 68 sits at the 60.1th percentile of random arrangements, i.e. unremarkable for a trajectory of this shape. The separation is what ordinary arrangement produces at this length, which makes the operator, not the incident, the thing that is unusual."
+}

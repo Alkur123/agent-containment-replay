@@ -1,0 +1,85 @@
+{
+ "_what_this_is": "Programme results table, each row re-derived from a committed artifact. STATUS distinguishes measured from unscoreable from not run.",
+ "rows": [
+  {
+   "experiment": "Frontier incident",
+   "status": "MEASURED",
+   "result": "Local detector fails: fires on 0 of 1,361 steps"
+  },
+  {
+   "experiment": "Component decomposition",
+   "status": "MEASURED",
+   "result": "All components present: 6/7/3 steps, triple co-occurrence 0"
+  },
+  {
+   "experiment": "Temporal separation",
+   "status": "MEASURED",
+   "result": "68 steps unordered (0.59 h); 371 steps / 2.66 h under causal ordering"
+  },
+  {
+   "experiment": "Segmentation robustness",
+   "status": "MEASURED",
+   "result": "Effect survives all 4 segmentations (co-occurrence 0 in every one; windows 68/68/8/43)"
+  },
+  {
+   "experiment": "Action-channel test",
+   "status": "MEASURED",
+   "result": "No recovery: +120,344 words yields +0 recognition, +0 discount; window unchanged at 68"
+  },
+  {
+   "experiment": "Controlled separation",
+   "status": "MEASURED",
+   "result": "Recall varies with locality: window_50 catches to separation 20 and fails beyond; step_local catches none at any separation"
+  },
+  {
+   "experiment": "Temporal shuffling",
+   "status": "MEASURED",
+   "result": "Arrangement changes detection with content held fixed: compressed (d=2) detected at W=5, original (d=68) at W=100, expanded (d=431) at W=500"
+  },
+  {
+   "experiment": "Window sweep",
+   "status": "MEASURED",
+   "result": "Recall rises with W: first window enclosing the licence is W=100, at a benign upper bound of 99.13%"
+  },
+  {
+   "experiment": "Benign scaling",
+   "status": "MEASURED",
+   "result": "Coincidence rises with trajectory length on 1,500,621 words of real benign agent reasoning (158x the corpus previously held). Latched firing, word-normalised: 0.76% at 50k words, 4.61% at the incident's 129k, 13.8% at 250k, 69% at 1M"
+  },
+  {
+   "experiment": "Architecture comparison",
+   "status": "MEASURED",
+   "result": "Operators differ on recall and latency (step_local 0% at every separation; latch/ordered_latch/event_graph 100% at all, latency 100 steps). False-positive half remains UNSCOREABLE on this corpus"
+  },
+  {
+   "experiment": "Semantic monitor",
+   "status": "MEASURED",
+   "result": "Reduces but does not remove the horizon: window 68 lexical to 16 semantic at a 5% per-family benign budget; triple co-occurrence still 0 at EVERY budget from 0.1% to 20%"
+  },
+  {
+   "experiment": "Model diversity",
+   "status": "MEASURED",
+   "result": "Step-locality generalises: across 1,500 labelled SHADE-Arena trajectories from 3 model families, single-step co-occurrence is 0 in every model and every label, in a corpus where a 68-step separation IS expressible (max 164). gpt-5 excluded: its chain of thought is not recorded (1.6 words/step), so 2 models were scoreable"
+  },
+  {
+   "experiment": "Behavioural diversity",
+   "status": "MEASURED",
+   "result": "Tested on 750 sabotage and 750 benign trajectories over 5 task variants, where 68 steps is expressible. The OPERATOR finding generalises (0 single-step co-occurrence anywhere); the DETECTOR does not (only 1 of 750 sabotage trajectories carry all three families at all, so these tasks do not verbalise a reality-discount licence)"
+  },
+  {
+   "experiment": "Independent replication",
+   "status": "NOT RUN (kit ready)",
+   "result": "Still cannot be done by us: the same author wrote every implementation. What IS done: a second implementation sharing no code but the frozen vocabulary agrees on 7/7 headline numbers, ruling out single-implementation artifacts; and 24 inputs, scripts and results are sha256-pinned so an external party can verify what they are running"
+  },
+  {
+   "experiment": "Temporal Locality Profile",
+   "status": "PROPOSED",
+   "result": "Reporting standard: horizon W, component rates, all pairwise and the triple intersection, minimum enclosing window in steps and wall-clock, trajectory length, benign corpus scale"
+  }
+ ],
+ "counts": {
+  "measured": 13,
+  "unscoreable": 0,
+  "not_run": 0
+ }
+}

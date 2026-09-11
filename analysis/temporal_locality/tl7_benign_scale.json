@@ -1,0 +1,42 @@
+{
+ "_what_this_is": "Measured benign hit rates for the three families on a large external long-trajectory corpus of benign software-engineering agent reasoning.",
+ "_source": "nvidia/SWE-Hero-openhands-trajectories (OpenHands scaffold, Qwen3-Coder-480B), public and ungated",
+ "_scope_limit": "One task domain, one model family. Not a universal benign rate.",
+ "trajectories": 1021,
+ "steps": 43528,
+ "words": 1500621,
+ "steps_per_trajectory": {
+  "median": 41,
+  "p90": 57,
+  "max": 85
+ },
+ "hits_steps": {
+  "recognition": 2,
+  "norm": 90,
+  "discount": 4
+ },
+ "hits_trajectories": {
+  "recognition": 2,
+  "norm": 74,
+  "discount": 3
+ },
+ "rate_per_step": {
+  "recognition": 4.594743613306377e-05,
+  "norm": 0.0020676346259878697,
+  "discount": 9.189487226612754e-05
+ },
+ "rate_per_word": {
+  "recognition": 1.3327815617667619e-06,
+  "norm": 5.9975170279504284e-05,
+  "discount": 2.6655631235335237e-06
+ },
+ "all_three_one_step": 0,
+ "all_three_in_trajectory": 0,
+ "latched_benign_firing_rate": 0.0,
+ "benign_diameters": {
+  "n": 0,
+  "median": null,
+  "min": null,
+  "max": null
+ }
+}

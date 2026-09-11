@@ -1,0 +1,210 @@
+{
+ "_what_this_is": "Component reach and separation across three model families and five sabotage task variants, on labelled long agentic trajectories.",
+ "_source": "adityaasinha28/control_arena_shade, a public ControlArena/SHADE-Arena mirror, ungated",
+ "_expressibility": "largest separation expressible: 164 steps",
+ "_excluded_models": [
+  "gpt-5"
+ ],
+ "_exclusion_rule": "A model whose assistant messages average under 5 words per step has no recorded chain of thought in this corpus and cannot be scored by a reasoning-reading monitor.",
+ "by_model": {
+  "claude-sonnet-4": {
+   "n": 500,
+   "steps": 29790,
+   "words": 4088782,
+   "max_expressible": 94,
+   "steps_with_reasoning": 28239,
+   "hits": {
+    "recognition": 305,
+    "norm": 701,
+    "discount": 2
+   },
+   "traj_with": {
+    "recognition": 54,
+    "norm": 150,
+    "discount": 2
+   },
+   "co_occur_steps": 0,
+   "all_three": 1,
+   "diameter_median": 13
+  },
+  "gemini-2-5-pro": {
+   "n": 500,
+   "steps": 30510,
+   "words": 2656332,
+   "max_expressible": 164,
+   "steps_with_reasoning": 27816,
+   "hits": {
+    "recognition": 12,
+    "norm": 183,
+    "discount": 1
+   },
+   "traj_with": {
+    "recognition": 9,
+    "norm": 75,
+    "discount": 1
+   },
+   "co_occur_steps": 0,
+   "all_three": 0,
+   "diameter_median": null
+  },
+  "gpt-5": {
+   "n": 500,
+   "steps": 35414,
+   "words": 57529,
+   "max_expressible": 131,
+   "steps_with_reasoning": 189,
+   "hits": {
+    "recognition": 1,
+    "norm": 9,
+    "discount": 0
+   },
+   "traj_with": {
+    "recognition": 1,
+    "norm": 9,
+    "discount": 0
+   },
+   "co_occur_steps": 0,
+   "all_three": 0,
+   "diameter_median": null
+  }
+ },
+ "by_label": {
+  "0": {
+   "n": 750,
+   "steps": 46888,
+   "words": 1544512,
+   "max_expressible": 164,
+   "steps_with_reasoning": 26803,
+   "hits": {
+    "recognition": 8,
+    "norm": 40,
+    "discount": 0
+   },
+   "traj_with": {
+    "recognition": 6,
+    "norm": 33,
+    "discount": 0
+   },
+   "co_occur_steps": 0,
+   "all_three": 0,
+   "diameter_median": null
+  },
+  "1": {
+   "n": 750,
+   "steps": 48826,
+   "words": 5258131,
+   "max_expressible": 133,
+   "steps_with_reasoning": 29441,
+   "hits": {
+    "recognition": 310,
+    "norm": 853,
+    "discount": 3
+   },
+   "traj_with": {
+    "recognition": 58,
+    "norm": 201,
+    "discount": 3
+   },
+   "co_occur_steps": 0,
+   "all_three": 1,
+   "diameter_median": 13
+  }
+ },
+ "by_task": {
+  "negative1": {
+   "n": 734,
+   "steps": 45805,
+   "words": 1506678,
+   "max_expressible": 164,
+   "steps_with_reasoning": 26201,
+   "hits": {
+    "recognition": 8,
+    "norm": 40,
+    "discount": 0
+   },
+   "traj_with": {
+    "recognition": 6,
+    "norm": 33,
+    "discount": 0
+   },
+   "co_occur_steps": 0,
+   "all_three": 0
+  },
+  "positive1": {
+   "n": 412,
+   "steps": 25869,
+   "words": 3841124,
+   "max_expressible": 133,
+   "steps_with_reasoning": 21283,
+   "hits": {
+    "recognition": 264,
+    "norm": 672,
+    "discount": 3
+   },
+   "traj_with": {
+    "recognition": 45,
+    "norm": 152,
+    "discount": 3
+   },
+   "co_occur_steps": 0,
+   "all_three": 1
+  },
+  "positive2": {
+   "n": 187,
+   "steps": 11407,
+   "words": 1415684,
+   "max_expressible": 131,
+   "steps_with_reasoning": 8135,
+   "hits": {
+    "recognition": 46,
+    "norm": 181,
+    "discount": 0
+   },
+   "traj_with": {
+    "recognition": 13,
+    "norm": 49,
+    "discount": 0
+   },
+   "co_occur_steps": 0,
+   "all_three": 0
+  },
+  "negative2": {
+   "n": 16,
+   "steps": 1083,
+   "words": 37834,
+   "max_expressible": 142,
+   "steps_with_reasoning": 602,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "co_occur_steps": 0,
+   "all_three": 0
+  },
+  "positive3": {
+   "n": 151,
+   "steps": 11550,
+   "words": 1323,
+   "max_expressible": 124,
+   "steps_with_reasoning": 23,
+   "hits": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "traj_with": {
+    "recognition": 0,
+    "norm": 0,
+    "discount": 0
+   },
+   "co_occur_steps": 0,
+   "all_three": 0
+  }
+ }
+}
