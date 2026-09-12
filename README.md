@@ -88,9 +88,14 @@
 > Standing caveats: harm labels on the real trace were assigned after the
 > transcript was read; a documented bypass of this class of control exists; and
 > the same person wrote the fixture, the boundary and this measurement.
-> ⚠ **The replay producing these numbers is not in this repository yet** - only
-> the detector scoring under `analysis/reg1_mythos5/` is. Until it is, treat
-> this section as a reported result, not a reproducible one.
+> **The replay producing these numbers is now in this repository** (added
+> 2026-09-12): `analysis/apart_sprint_2026-09/mythos5_real_replay.py` with its
+> result, and `replay_incidents.py` with the benign-control result behind
+> metrics 3 and 4. Both are byte-for-byte the files that produced the numbers.
+> They import the boundary rings, which are **not** part of this repository's
+> MIT release, so this is an auditable record rather than a one-command
+> reproduction: you can read exactly what was run and check it against the raw
+> per-step output, but you cannot re-run it here without that engine.
 
 
 Ten agent trajectories in a single JSON schema: four reconstructed from the two

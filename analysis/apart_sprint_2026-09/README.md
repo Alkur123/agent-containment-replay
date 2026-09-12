@@ -18,16 +18,31 @@ pre-declared scope to fire) and *substrate-independent* (three distinct mechanis
 shared point of failure). It does **not** mean independent in the sense that would
 survive an adaptive adversary, and this analysis says so on its own evidence.
 
+The report also tests both of those findings **out of sample**, on a 1,361-action
+transcript a different lab released five weeks after the fixture and the detector
+here were pinned. That replay is now in this folder (`mythos5_real_replay.py`);
+until 12 September it was described in the root README and not shipped.
+
 ## What is and is not reproducible from this repo alone
 
 `hf_phase_matrix.py` is the exact script that produced `hf_phase_matrix.json` and
 `hf_phase_matrix_gapcheck.json`. It is included for transparency and audit, not as a
-one-command reproduction. It imports `engine.ring12.policy`, `engine.ring12.drift`,
-and `engine.ring12.verifier`, none of which are part of this repository's MIT release.
+one-command reproduction. It imports `engine.ring12.trajectory` and
+`engine.ring12.verifier`, and its behaviour depends on the environment toggles read
+by `engine.ring12.policy` and `engine.ring12.drift`, none of which are part of this
+repository's MIT release.
 This repo, by design, ships only the rationalization (G5) detector and `trajectory.py`
 (see `harness/score.py` and `detector/`), not the full governance architecture. The
 two rules that fire in this analysis (`secret_exfil_flow` and `capability_laundering`)
 live in the modules that are not public here.
+
+Every script here is a **byte-for-byte copy** of the file that produced the
+result beside it, not a cleaned-up version. That is deliberate, and it has one
+visible cost: their `USAGE` blocks and default output paths name directories in
+the private tree (`eval/`, `eval/results/`), which do not exist in this
+repository. Reading a path there as a path here will not work. The alternative
+was to edit them for publication, which would have made them no longer the
+scripts that produced the numbers.
 
 What you can verify from this repo alone:
 
@@ -84,3 +99,33 @@ What you can verify from this repo alone:
   (`secret_exfil_flow`'s taint source calls `credential_endpoint`'s own
   detector) was found by reading `engine/ring12/drift.py` directly, stated in
   the script as manually verified, not caught by an automated tool.
+- `mythos5_real_replay.py` / `mythos5_real_replay.json` — **the out-of-sample
+  check (report Section 4.5), added 2026-09-12.** On 1 August 2026 this repo
+  published an 8-step reconstruction of the Mythos 5 incident and a containment
+  prediction derived from it. On 9 September the incident's owner released the
+  real transcript: 1,361 actions over 10.42 hours, 170x finer. This script runs
+  that transcript through the same unmodified verifier, in four scope
+  configurations. With a declared boundary the session ends at **step 6 of
+  1,361**, containing 90 of 90 outbound steps and the single irreversible one
+  (the package upload at step 1,358) with 1,352 steps of margin; on the stricter
+  named-host-only reading, 89 of 90 and a kill at step 10; with **no** declared
+  boundary, 0 of 90 and no kill at all, which reproduces the published
+  prediction against ground truth. The kill is fail-closed, not clever: that
+  step's egress destination is a shell variable the boundary cannot resolve, so
+  it cannot be shown to lie inside the declared line and is refused. The hosts
+  that variable iterates are in fact all outside the line, but the control never
+  established that and is **not** credited with it. ⚠ Not pre-registered, and
+  the harm labels were assigned after the transcript was readable — the primary
+  number deliberately does not depend on them, being "which step does the
+  session die on, against step 1,358". The pre-registered object was a different
+  thing entirely, a WARN-only chain-of-thought detector, and it **failed**
+  (`analysis/reg1_mythos5/`). Nothing here disturbs that verdict.
+- `replay_incidents.py` / `benign_controls_replay.json` — the false-positive
+  half of the same section, and the script behind the four-incident prior-work
+  table in the report's appendix. Under a declared boundary, **0 of 4** faithful
+  benign controls are killed and **2 of 2** loose ones are. The second number is
+  the cost of boundary enforcement and is reported as a cost, not excused: one
+  of the two dies on an undeclared CDN, and the other on `pipeline_poisoning`,
+  which fires in *every* configuration and is therefore not a boundary cost at
+  all. Metric 3's denominator is four sessions — read it as "no false kill in
+  the four faithful controls we hold", never as a false-positive rate.
