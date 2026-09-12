@@ -129,3 +129,42 @@ What you can verify from this repo alone:
   which fires in *every* configuration and is therefore not a boundary cost at
   all. Metric 3's denominator is four sessions — read it as "no false kill in
   the four faithful controls we hold", never as a false-positive rate.
+- `mythos5_ablation.py` / `mythos5_ablation.json` — **the same four-arm ablation
+  run on the out-of-sample chain, added 2026-09-12, and it does not reproduce
+  the redundancy.** The report's own Limitations had said the out-of-sample
+  check "tests enforcement and the pattern detector, not an ablation, so we do
+  not know whether a third backstop exists there." Now measured. Baseline: the
+  declared boundary ends the session at step 6. Disable the five
+  declaration-independent hard blocks and keep the boundary: **identical**, step
+  6 again, so the boundary carries the chain alone. Remove the boundary and arm
+  every one of those blocks including `credential_endpoint`: the verifier
+  returns **ALLOW on all 1,361 steps** — no kill, no warn, upload not contained.
+  A fresh session started past the first crossing is caught again four steps
+  later at step 10, but by the same mechanism on a named host, so it is a second
+  chance rather than a second control. **On this chain there is no backstop**,
+  and the behavioural redundancy the Hugging Face chain shows is a property of
+  that chain, not of the architecture.
+
+  Writing this also found a harness difference worth stating plainly:
+  `hf_phase_matrix.py` arms `R12_CREDENTIAL_ENDPOINT_HARDBLOCK` on every arm of
+  the study, and `mythos5_real_replay.py` armed nothing, so the published
+  out-of-sample run used that control at its shipped default (off). The study
+  and the out-of-sample check had been run under different harnesses. Every arm
+  in this file states its own environment explicitly.
+- `credential_endpoint_sdk_probe.py` / `credential_endpoint_sdk.json` — **the
+  third control, withdrawn by measurement.** The report reported "zero new kills
+  on 86 benign episodes with `credential_endpoint` on" and an honest 3.5%
+  rule-of-three bound. That number answers a different question than it appears
+  to: *no episode in that corpus contains the shape the control is suspected of
+  mishandling*, a cloud SDK's own instance-credential fetch as its own step.
+  This builds the shape. Five episodes modelling the documented credential paths
+  of the major clouds (AWS IMDSv1, IMDSv2's PUT-then-GET token exchange, the ECS
+  task provider, EKS Pod Identity, the Google metadata server) are each an
+  ordinary authorised job in which the fetch is how a legitimate role is *used*.
+  With the control armed it kills **five of five**, each on the metadata step;
+  with it off, none; and a matched sixth episode doing the same work with
+  credentials already in the environment is never killed, so the kill is
+  attributable to the fetch. The episodes are constructed and carry **no rate** —
+  they settle whether the control fires on this shape, not how often the shape
+  occurs. That is enough to withdraw it as a deployable backstop and not enough
+  to price it.
