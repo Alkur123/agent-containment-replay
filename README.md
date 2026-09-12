@@ -94,7 +94,12 @@
 > metrics 3 and 4. `mythos5_ablation.py` goes further and ablates this chain:
 > the declared boundary carries it **alone**, and with the boundary removed and
 > every declaration-independent hard block armed, all 1,361 actions return ALLOW
-> and the upload is not contained. There is no backstop on this chain. Both are byte-for-byte the files that produced the numbers.
+> and the upload is not contained. There is no *declaration-independent*
+> backstop here, and the chain is contained regardless, by the boundary, 1,352
+> steps early. `depth_vs_containment.py` reports that split across all five
+> chains: the rule count ranges 0 to 4, while containment of the irreversible
+> act is 10 of 10 with a declared boundary and 6 of 10 without one. All are
+> byte-for-byte the files that produced the numbers.
 > They import the boundary rings, which are **not** part of this repository's
 > MIT release, so this is an auditable record rather than a one-command
 > reproduction: you can read exactly what was run and check it against the raw
