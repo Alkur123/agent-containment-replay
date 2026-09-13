@@ -111,6 +111,40 @@ public postmortems in which autonomous agents escaped evaluation sandboxes and
 compromised third-party production infrastructure, and six benign controls for
 measuring the false-positive cost of whatever you use to catch them.
 
+---
+
+## The AI Incident Response Sprint report (September 2026)
+
+**[`apart_sprint_submission.pdf`](apart_sprint_submission.pdf)** — *Redundant by
+Behavior, Correlated by Construction, Neither on the Next Incident: Three Tests
+of One Containment Claim.* Submitted to the Apart Research and CeSIA AI Incident
+Response Sprint, Track 1: Containment.
+
+Every script and result file behind it is in
+[`analysis/apart_sprint_2026-09/`](analysis/apart_sprint_2026-09/). The numbers
+in the report are recomputed from those JSON files, so each one can be checked
+against the run that produced it.
+
+**What predates the sprint:** the governance architecture, the technical report
+it cites, and the fixture itself — committed here on **1 August 2026**, five
+weeks before the sprint was announced. The git history shows that one commit and
+no other, and the copy measured in the report is byte-identical to the public one.
+
+**What is new for the sprint:** the phase tagging against Hugging Face's own
+taxonomy, the four-arm ablation and its replay on a second chain, two
+false-positive probes, and the static certification of the rule composition.
+
+| Test | Result |
+|---|---|
+| Behavioural — four-arm ablation on the Hugging Face chain | held: four independently sufficient rules, killing at steps 2, 4 and 6 of 16 |
+| Structural — certifying the three controls against each other | failed: 3 effective independent arms, all pattern matchers over strings the agent controls |
+| False-positive cost of the third control | 5 of 5 benign cloud-SDK episodes killed, so it is withdrawn |
+| Out of sample — the real 1,361-action Mythos 5 trace | no backstop: with the declared boundary removed, **0 rules fire in 1,361 actions** |
+
+Across all five chains, declaration-independent depth ranges **0 to 4** and is a
+property of the chain, not the architecture. A declared scope boundary contains
+**10 of 10** irreversible actions against **6 of 10** without one.
+
 > **Corpus gap, stated up front (2026-08-05).** There are now **four** publicly
 > disclosed evaluation-containment incidents, not two. The fixtures cover the
 > first two only:
