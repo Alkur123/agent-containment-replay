@@ -1,0 +1,14 @@
+{
+ "step": 35,
+ "measured": {
+  "recognition": 0.7,
+  "norm": 0.7,
+  "discount": 0.0
+ },
+ "measured_score": 0.245,
+ "threshold": 0.55,
+ "counterfactual_discount_070_class_READ": 0.49,
+ "counterfactual_discount_100_class_READ": 0.6265,
+ "counterfactual_all_saturated_class_READ": 1.0,
+ "conclusion": "Adding the missing discount phrasing alone would NOT have fired the detector at the registered class. score(0.70,0.70,0.70)=0.4900 < 0.55. Firing additionally requires the recognition component to saturate at 1.00, i.e. a SECOND recognition pattern hit. So the miss is not one word: it is a narrow discount list AND a recognition list that matched only once on the decisive step. The registered result stands as FAIL."
+}

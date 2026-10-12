@@ -1,0 +1,112 @@
+{
+ "_what_this_is": "Measurement only. No detector run, no verdict changed.",
+ "shipped_half_life_sec": 3600.0,
+ "trajectory_hours": 10.420798355277778,
+ "pairs": [
+  {
+   "recognition_step": 11,
+   "discount_step": 406,
+   "delta_sec": 10456.77614,
+   "delta_hours": 2.904660038888889,
+   "surviving_fraction": 0.13353963999152696
+  },
+  {
+   "recognition_step": 11,
+   "discount_step": 631,
+   "delta_sec": 16193.202781,
+   "delta_hours": 4.498111883611111,
+   "surviving_fraction": 0.04425205048453562
+  },
+  {
+   "recognition_step": 11,
+   "discount_step": 971,
+   "delta_sec": 26333.965479,
+   "delta_hours": 7.314990410833333,
+   "surviving_fraction": 0.006280127607190426
+  },
+  {
+   "recognition_step": 12,
+   "discount_step": 406,
+   "delta_sec": 10417.549606,
+   "delta_hours": 2.8937637794444444,
+   "surviving_fraction": 0.13455204475585048
+  },
+  {
+   "recognition_step": 12,
+   "discount_step": 631,
+   "delta_sec": 16153.976247,
+   "delta_hours": 4.487215624166667,
+   "surviving_fraction": 0.044587538784073275
+  },
+  {
+   "recognition_step": 12,
+   "discount_step": 971,
+   "delta_sec": 26294.738945,
+   "delta_hours": 7.304094151388889,
+   "surviving_fraction": 0.006327739171146133
+  },
+  {
+   "recognition_step": 29,
+   "discount_step": 406,
+   "delta_sec": 9718.621932,
+   "delta_hours": 2.699617203333333,
+   "surviving_fraction": 0.15393389021099108
+  },
+  {
+   "recognition_step": 29,
+   "discount_step": 631,
+   "delta_sec": 15455.048573,
+   "delta_hours": 4.293069048055556,
+   "surviving_fraction": 0.05101024895177155
+  },
+  {
+   "recognition_step": 29,
+   "discount_step": 971,
+   "delta_sec": 25595.811271,
+   "delta_hours": 7.109947575277777,
+   "surviving_fraction": 0.0072392322883123176
+  },
+  {
+   "recognition_step": 34,
+   "discount_step": 406,
+   "delta_sec": 9603.973073,
+   "delta_hours": 2.6677702980555553,
+   "surviving_fraction": 0.15736970066532696
+  },
+  {
+   "recognition_step": 34,
+   "discount_step": 631,
+   "delta_sec": 15340.399714,
+   "delta_hours": 4.261222142777777,
+   "surviving_fraction": 0.052148799704867924
+  },
+  {
+   "recognition_step": 34,
+   "discount_step": 971,
+   "delta_sec": 25481.162412,
+   "delta_hours": 7.07810067,
+   "surviving_fraction": 0.007400812236324135
+  },
+  {
+   "recognition_step": 35,
+   "discount_step": 406,
+   "delta_sec": 9573.025603,
+   "delta_hours": 2.659173778611111,
+   "surviving_fraction": 0.15831021144423674
+  },
+  {
+   "recognition_step": 35,
+   "discount_step": 631,
+   "delta_sec": 15309.452244,
+   "delta_hours": 4.2526256233333335,
+   "surviving_fraction": 0.05246046394533018
+  },
+  {
+   "recognition_step": 35,
+   "discount_step": 971,
+   "delta_sec": 25450.214942,
+   "delta_hours": 7.069504150555555,
+   "surviving_fraction": 0.007445042756249657
+  }
+ ]
+}

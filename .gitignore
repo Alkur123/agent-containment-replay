@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 .venv/
 results/
+!analysis/reg1_mythos5/results/

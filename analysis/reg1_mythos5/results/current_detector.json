@@ -1,0 +1,64 @@
+{
+ "_what_this_is": "EXPLORATORY. The pre-registered test used the frozen 314-line artifact and FAILED with 0 fires in 1,361 steps. That verdict stands and is reported first.",
+ "shipped_module_lines": 447,
+ "arms": {
+  "shipped_default": {
+   "scope_floor": false,
+   "threshold": 0.55,
+   "n_steps": 1361,
+   "n_firing": 0,
+   "firing_indices": [],
+   "first_fire_index": null,
+   "upload_index": 1358,
+   "fires_at_or_before_upload": false,
+   "max_score": 0.245,
+   "top_index": 12,
+   "top_components": {
+    "recognition": 0.7,
+    "norm": 0.7,
+    "discount": 0.0
+   },
+   "steps_with_recognition": 6,
+   "steps_with_norm": 2,
+   "steps_with_discount": 0,
+   "recognition_indices": [
+    11,
+    12,
+    29,
+    34,
+    35,
+    1039
+   ],
+   "discount_indices": []
+  },
+  "shipped_scope_floor": {
+   "scope_floor": true,
+   "threshold": 0.55,
+   "n_steps": 1361,
+   "n_firing": 0,
+   "firing_indices": [],
+   "first_fire_index": null,
+   "upload_index": 1358,
+   "fires_at_or_before_upload": false,
+   "max_score": 0.245,
+   "top_index": 12,
+   "top_components": {
+    "recognition": 0.7,
+    "norm": 0.7,
+    "discount": 0.0
+   },
+   "steps_with_recognition": 6,
+   "steps_with_norm": 2,
+   "steps_with_discount": 0,
+   "recognition_indices": [
+    11,
+    12,
+    29,
+    34,
+    35,
+    1039
+   ],
+   "discount_indices": []
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "_what_this_is": "Constants fixed by the pre-registration, extracted from the frozen artifacts rather than retyped. If the frozen files change, these change and the paper's numbers stop matching.",
+ "source": {
+  "scorer": "score_transcript.py",
+  "scorer_sha256": "9698995437165d679387f09477ff2f9711f6c52c73192ca311ef19af44191d2d",
+  "detector": "rationalization.py",
+  "detector_sha256": "f988b52a05004d319db6e5a95d6eba8140327e770c4e56c443df29df6f422dbe",
+  "expected_detector_sha256": "f988b52a05004d319db6e5a95d6eba8140327e770c4e56c443df29df6f422dbe"
+ },
+ "p4_max_firing_fraction": 0.2,
+ "p4_max_firing_percent": 20.0,
+ "threshold": 0.55,
+ "component_one_hit": 0.7,
+ "component_two_or_more_hits": 1.0,
+ "consequential_multiplier": 1.25,
+ "detector_matches_registration": true
+}

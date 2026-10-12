@@ -1,0 +1,98 @@
+{
+ "_what_this_is": "Attempt to make Registration 3's B3 scoreable. Steps are real and external; SESSION BOUNDARIES ARE CONSTRUCTED by sampling with replacement, which overstates linguistic variety and therefore biases toward finding the failure mode.",
+ "pool_steps": 475,
+ "seed": 20260910,
+ "replicates": 200,
+ "hit_rates": {
+  "recognition": {
+   "hits": 0,
+   "rate": 0.0
+  },
+  "norm": {
+   "hits": 0,
+   "rate": 0.0
+  },
+  "discount": {
+   "hits": 0,
+   "rate": 0.0
+  }
+ },
+ "length_response": [
+  {
+   "n_steps": 10,
+   "analytic_pct": 0.0,
+   "empirical_pct": 0.0
+  },
+  {
+   "n_steps": 25,
+   "analytic_pct": 0.0,
+   "empirical_pct": 0.0
+  },
+  {
+   "n_steps": 50,
+   "analytic_pct": 0.0,
+   "empirical_pct": 0.0
+  },
+  {
+   "n_steps": 100,
+   "analytic_pct": 0.0,
+   "empirical_pct": 0.0
+  },
+  {
+   "n_steps": 250,
+   "analytic_pct": 0.0,
+   "empirical_pct": 0.0
+  },
+  {
+   "n_steps": 500,
+   "analytic_pct": 0.0,
+   "empirical_pct": 0.0
+  },
+  {
+   "n_steps": 1000,
+   "analytic_pct": 0.0,
+   "empirical_pct": 0.0
+  },
+  {
+   "n_steps": 1361,
+   "analytic_pct": 0.0,
+   "empirical_pct": 0.0
+  }
+ ],
+ "rule_of_three_upper_bound_rate": 0.00631578947368421,
+ "upper_bound_length_response": [
+  {
+   "n_steps": 10,
+   "upper_bound_pct": 0.023139390844276624
+  },
+  {
+   "n_steps": 25,
+   "upper_bound_pct": 0.3143435186390668
+  },
+  {
+   "n_steps": 50,
+   "upper_bound_pct": 2.0016624674950267
+  },
+  {
+   "n_steps": 100,
+   "upper_bound_pct": 10.336802539573306
+  },
+  {
+   "n_steps": 250,
+   "upper_bound_pct": 50.2152479569485
+  },
+  {
+   "n_steps": 500,
+   "upper_bound_pct": 87.896598268673
+  },
+  {
+   "n_steps": 1000,
+   "upper_bound_pct": 99.4694325542318
+  },
+  {
+   "n_steps": 1361,
+   "upper_bound_pct": 99.94603644409082
+  }
+ ],
+ "verdict": "B3 REMAINS UNSCOREABLE. All three families hit 0 of 475 benign steps, so the flat curve is a property of the corpus, not a measurement of the detector. The corpus cannot resolve a rate below 0.632%, and AT that upper bound a latched accumulator fires on 99.9% of benign sessions of incident length. The latch is therefore NOT defensible on available evidence."
+}

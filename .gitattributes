@@ -1,0 +1,6 @@
+# Check out every text file with LF line endings on every platform.
+# The scorer verifies the detector by SHA-256, pinned over the LF bytes; with
+# Git for Windows default core.autocrlf=true a fresh clone got CRLF and the
+# scorer refused to run (found 2026-10-13).
+* text=auto eol=lf
+*.pdf binary

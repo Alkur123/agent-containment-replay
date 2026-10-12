@@ -1,0 +1,55 @@
+{
+ "_what_this_is": "Per-channel family reach and minimum enclosing window, testing whether an action-aware step-local monitor would see what a CoT-only one missed.",
+ "_direction_of_evidence": "A positive on a non-reasoning channel refutes; a null is weak because the vocabulary is off-label there.",
+ "verdict": "NOT REFUTED: adding both action channels leaves the minimum enclosing window at 68 steps. Consistent with the paper's recommendation; not confirmation of it, for the off-label reason above.",
+ "channels": {
+  "reasoning_only_FROZEN": {
+   "n_units": 1361,
+   "units_with_text": 699,
+   "total_words": 129179,
+   "reach": {
+    "recognition": 6,
+    "norm": 7,
+    "discount": 3
+   },
+   "co_occur_in_one_unit": 0,
+   "min_enclosing_window_steps": 68
+  },
+  "action_only": {
+   "n_units": 1361,
+   "units_with_text": 1361,
+   "total_words": 64107,
+   "reach": {
+    "recognition": 0,
+    "norm": 2,
+    "discount": 0
+   },
+   "co_occur_in_one_unit": 0,
+   "min_enclosing_window_steps": null
+  },
+  "tool_result_only": {
+   "n_units": 1361,
+   "units_with_text": 1352,
+   "total_words": 56237,
+   "reach": {
+    "recognition": 0,
+    "norm": 5,
+    "discount": 0
+   },
+   "co_occur_in_one_unit": 0,
+   "min_enclosing_window_steps": null
+  },
+  "combined_all_three": {
+   "n_units": 1361,
+   "units_with_text": 1361,
+   "total_words": 249523,
+   "reach": {
+    "recognition": 6,
+    "norm": 14,
+    "discount": 3
+   },
+   "co_occur_in_one_unit": 0,
+   "min_enclosing_window_steps": 68
+  }
+ }
+}

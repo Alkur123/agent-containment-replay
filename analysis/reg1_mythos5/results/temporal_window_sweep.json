@@ -1,0 +1,116 @@
+{
+ "_what_this_is": "Recall and a benign FP upper bound as functions of the temporal window W, plus conversion sensitivity. n=1 trajectory: 'encloses_licence' is not a population recall rate.",
+ "benign_words": 9503,
+ "benign_upper_bound_per_word": 0.0003156897821740503,
+ "words_per_unit": 184.80543633762517,
+ "min_enclosing_window_steps": 68,
+ "min_enclosing_window_seconds": 2127.956707,
+ "sweep": [
+  {
+   "window_steps": 1,
+   "encloses_licence": false,
+   "benign_fp_upper_bound": 0.00018209768681257322
+  },
+  {
+   "window_steps": 2,
+   "encloses_licence": false,
+   "benign_fp_upper_bound": 0.0013364015023771495
+  },
+  {
+   "window_steps": 5,
+   "encloses_licence": false,
+   "benign_fp_upper_bound": 0.01620315751991312
+  },
+  {
+   "window_steps": 10,
+   "encloses_licence": false,
+   "benign_fp_upper_bound": 0.08638610347389156
+  },
+  {
+   "window_steps": 20,
+   "encloses_licence": false,
+   "benign_fp_upper_bound": 0.32666003521825604
+  },
+  {
+   "window_steps": 50,
+   "encloses_licence": false,
+   "benign_fp_upper_bound": 0.8464090271261125
+  },
+  {
+   "window_steps": 68,
+   "encloses_licence": false,
+   "benign_fp_upper_bound": 0.9443230441017008
+  },
+  {
+   "window_steps": 100,
+   "encloses_licence": true,
+   "benign_fp_upper_bound": 0.9912556921017589
+  },
+  {
+   "window_steps": 200,
+   "encloses_licence": true,
+   "benign_fp_upper_bound": 0.9999743630530028
+  },
+  {
+   "window_steps": 400,
+   "encloses_licence": true,
+   "benign_fp_upper_bound": 0.9999999997809119
+  },
+  {
+   "window_steps": 700,
+   "encloses_licence": true,
+   "benign_fp_upper_bound": 1.0
+  },
+  {
+   "window_steps": 1361,
+   "encloses_licence": true,
+   "benign_fp_upper_bound": 1.0
+  }
+ ],
+ "conversion_sensitivity": {
+  "A_first_action": {
+   "n_units": 1361,
+   "units_with_text": 699,
+   "reach": {
+    "recognition": 6,
+    "norm": 7,
+    "discount": 3
+   },
+   "co_occur_in_one_unit": 0,
+   "min_enclosing_window_units": 68
+  },
+  "B_all_actions_until_next": {
+   "n_units": 1361,
+   "units_with_text": 1361,
+   "reach": {
+    "recognition": 6,
+    "norm": 13,
+    "discount": 5
+   },
+   "co_occur_in_one_unit": 0,
+   "min_enclosing_window_units": 68
+  },
+  "C_temporal_segments_5min": {
+   "n_units": 126,
+   "units_with_text": 125,
+   "reach": {
+    "recognition": 4,
+    "norm": 6,
+    "discount": 3
+   },
+   "co_occur_in_one_unit": 0,
+   "min_enclosing_window_units": 8
+  },
+  "D_reasoning_blocks": {
+   "n_units": 700,
+   "units_with_text": 700,
+   "reach": {
+    "recognition": 6,
+    "norm": 7,
+    "discount": 3
+   },
+   "co_occur_in_one_unit": 0,
+   "min_enclosing_window_units": 43
+  }
+ }
+}
