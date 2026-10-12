@@ -1,0 +1,128 @@
+{
+ "_about": "SHA-256 of the replication inputs, scripts and results AS THIS REPOSITORY SERVES THEM (LF line endings, enforced by .gitattributes). analysis/temporal_locality/tl6_rederive.json keeps its original kit_manifest, computed on a Windows working copy over CRLF bytes; each entry here names the same item. Written 2026-10-13.",
+ "entries": {
+  "script/tl1_shuffle.py": {
+   "path": "analysis/temporal_locality/tl1_shuffle.py",
+   "sha256": "e5f6f9cc5289f697bf22477cf04bde5977db817048990628873af98a71d092be",
+   "original_manifest_value": "43bfa2f8fc08ede395ad4aca51e248d3f23caf6a44d4c9a570ad6468967a2a4b"
+  },
+  "script/tl2_operators.py": {
+   "path": "analysis/temporal_locality/tl2_operators.py",
+   "sha256": "e4a07398c62c7cbf4a3a1be4cd0e59e958a7300a2af0851ee276719573ebc11f",
+   "original_manifest_value": "5fc639d3f82b48fad0dd02987b5d78a32b90132f9ec0068b2932641a90a15d35"
+  },
+  "script/tl3_behaviours.py": {
+   "path": "analysis/temporal_locality/tl3_behaviours.py",
+   "sha256": "79d3bb49ac194ef9916c2fc4ba87f4ad762704f8c3f48e0a534ef0fb319550c7",
+   "original_manifest_value": "d3570d1bcc7920be655884a14c583fe5d9ce969bd15ec2eb9da92f1bed214679"
+  },
+  "script/tl5_semantic.py": {
+   "path": "analysis/temporal_locality/tl5_semantic.py",
+   "sha256": "71b88567aca4d63b01ca76442784273284255ef0f8bafff0ecabc98e98bfd5cc",
+   "original_manifest_value": "9f7ff4536ca8142d253113857a222ebeab5662d7c155414c7541f3e56da98186"
+  },
+  "script/tl6_rederive.py": {
+   "path": "analysis/temporal_locality/tl6_rederive.py",
+   "sha256": "bd9d2f2d8cc095c34e2662de4383e1cb293daf867699b5b1ac71f023c6c5607b",
+   "original_manifest_value": "7e041ab609c0232125a99d13521922ace50f8c5d17d95c452d7769c502189d2e"
+  },
+  "script/tl_results_table.py": {
+   "path": "analysis/temporal_locality/tl_results_table.py",
+   "sha256": "5d8332626aff0a7f09aecc510d429f83cd2f083451871c9f556135bca2b2a4cb",
+   "original_manifest_value": "0fba2fb73be684b1ea1b92cf24f2a7227d9d351acb082dd54466e852cf23b31d",
+   "note": "CHANGED AFTER THE KIT WAS FROZEN: the original manifest was written at commit e7a160e (private history); the programme table was then extended with rows from later experiments (the benign-scale and SHADE-Arena generalisation runs), so the current file differs in content from the frozen digest, not only in line endings. The sha256 here is the current file's."
+  },
+  "result/tl1_shuffle.json": {
+   "path": "analysis/temporal_locality/tl1_shuffle.json",
+   "sha256": "27feb1a1a1b458c9d0ea5b217552a99951eb032c9e16fb7311177f5cacf4146b",
+   "original_manifest_value": "53e5fcdeb94b00c3e360d00ed55de6d3706041ad8f50e56816c999c58332d0b5"
+  },
+  "result/tl2_operators.json": {
+   "path": "analysis/temporal_locality/tl2_operators.json",
+   "sha256": "f724daeaeb052eccdcf463a2b9f8a591597983529dcca563efbb37a9b5bfd985",
+   "original_manifest_value": "00e888906c7a7d9c650e61385536b1271fd1f9b8299c01bbfcda65180e0bfbc4"
+  },
+  "result/tl3_behaviours.json": {
+   "path": "analysis/temporal_locality/tl3_behaviours.json",
+   "sha256": "1747e1524870c0ff51adb0899a32020d300ce80ae06329dbc0a3df4b1a8c91bb",
+   "original_manifest_value": "b52c232f11bfc608ce3c0fa64ec7a4f6cd8aa786addfdaec26b3f65b890b025c"
+  },
+  "result/tl5_semantic.json": {
+   "path": "analysis/temporal_locality/tl5_semantic.json",
+   "sha256": "eec8c91beb9ace8667ae21e9f04d71873021e3853e341bd9a4b39a8e30bdcd2d",
+   "original_manifest_value": "eb0325d7267b4b4b9256680433f448c3eddcc2100a57ed1d936dfcf529c9883f"
+  },
+  "result/tl_results_table.json": {
+   "path": "analysis/temporal_locality/tl_results_table.json",
+   "sha256": "b46069da3716a0e700d997efa0df7bffa6f695e1cd38ef8761df4c0f54a82105",
+   "original_manifest_value": "0e8d83e670a40fd004726e150f5c540dd4d5d14b66e8776825836a06f4074b7f",
+   "note": "CHANGED AFTER THE KIT WAS FROZEN: the original manifest was written at commit e7a160e (private history); the programme table was then extended with rows from later experiments (the benign-scale and SHADE-Arena generalisation runs), so the current file differs in content from the frozen digest, not only in line endings. The sha256 here is the current file's."
+  },
+  "result/mythos5/action_channel.json": {
+   "path": "analysis/reg1_mythos5/results/action_channel.json",
+   "sha256": "b83f26e411d2a464bc1d3bb78625f696fa2c593783847d8daf5c453f8177748d",
+   "original_manifest_value": "7d8de9d8708e1dcd91fce756a6fe4afb0f92b78c782cb3e2c5d39fd418ad73e9"
+  },
+  "result/mythos5/b3_length_response.json": {
+   "path": "analysis/reg1_mythos5/results/b3_length_response.json",
+   "sha256": "4f21fbc46165b8576069d637c338a8691b6e9d14e215da55ecb3f43aa8927995",
+   "original_manifest_value": "eb09937fe81eb3b95403aa040a0e8104cad01101fcf3e88a3f092cf618624d55"
+  },
+  "result/mythos5/component_reach.json": {
+   "path": "analysis/reg1_mythos5/results/component_reach.json",
+   "sha256": "5588552cc7324c544bc54a4505053566bf7eda23a241a2211169ed993cb32833",
+   "original_manifest_value": "cb7666599742246087fd795f992079236b68f2c7dd48e7aac4025bc4b353a950"
+  },
+  "result/mythos5/conjunct_timing.json": {
+   "path": "analysis/reg1_mythos5/results/conjunct_timing.json",
+   "sha256": "1c075e0bf672405a7ca2004e2c009bfc681b310d7893ea56f3671e6a915583e7",
+   "original_manifest_value": "9b2ca25762594b2b616543b81d3113c19e441bbd0fe9301e7d67c7195b518efa"
+  },
+  "result/mythos5/current_detector.json": {
+   "path": "analysis/reg1_mythos5/results/current_detector.json",
+   "sha256": "c9d8382381316fd884e74e3a3e89b2b7c421ca313d50eeb59162902f821cafd8",
+   "original_manifest_value": "e35ac001404664c0ea6547c5811a77899d85cdeec9e85351e4f71806e911810c"
+  },
+  "result/mythos5/real_replay.json": {
+   "path": "analysis/reg1_mythos5/results/real_replay.json",
+   "sha256": "f16ba1efa5b04ec91843fe5130eca38e18bd07b6b5648659aeb2766ea151483b",
+   "original_manifest_value": "b9dc83d277d8bd7fc9719044979760e88fb12ec744c605bcbcd086e98aecfb32"
+  },
+  "result/mythos5/registered_constants.json": {
+   "path": "analysis/reg1_mythos5/results/registered_constants.json",
+   "sha256": "52fd612ff7c8b68bf551d7081ef591a25594bcb5cea1cfe925a68f24981855c3",
+   "original_manifest_value": "cc8a37f15d7b5dadbbe50bd54867ac7dca10690004c9f8df385dc82224ddc0b9"
+  },
+  "result/mythos5/session_feasibility.json": {
+   "path": "analysis/reg1_mythos5/results/session_feasibility.json",
+   "sha256": "5d8f3419c689999ed9b29393180d307f3ebd63dad39b9aab8b84050b044fdd5c",
+   "original_manifest_value": "9462bfd9b4ee5f5f6f4db4a74918fa9dbd35201b82c0d25355eec56ee616db1d"
+  },
+  "result/mythos5/step35_counterfactual.json": {
+   "path": "analysis/reg1_mythos5/results/step35_counterfactual.json",
+   "sha256": "eab00e6abbf08c35b07567493d85b6d7728ec942274c619a780580debf1b2b6e",
+   "original_manifest_value": "40a22188a7ec72fd0b56d69844f05acdb956058856ae2e337a97d3ed2add015e"
+  },
+  "result/mythos5/temporal_window_sweep.json": {
+   "path": "analysis/reg1_mythos5/results/temporal_window_sweep.json",
+   "sha256": "4644db28498d0d3fe2a5744ebb9fb4c4e04c209bb61e4724c3be9575f3eaf58e",
+   "original_manifest_value": "398a61ffba923dde872e75d525351f8874f72d4eee480bea7fb2276e736b150a"
+  },
+  "input/rationalization.py": {
+   "note": "the original manifest pins the SHIPPED detector module, which is not in this repository; its three pattern lists are identical (compared as parsed syntax trees) to the frozen module below",
+   "frozen_module": "detector/engine/ring12/rationalization.py",
+   "frozen_module_sha256": "f988b52a05004d319db6e5a95d6eba8140327e770c4e56c443df29df6f422dbe",
+   "original_manifest_value": "4cc40d89e69c7f563757ade0b5662898e26c5cf4ae785f931883e76655468dc8"
+  },
+  "input/transcript.jsonl": {
+   "sha256_as_served_by_developer": "6f2a5a50b53640bd779a198cef8a620f2d6e2bbaaf4a0dea9edac87a69fc3e4b",
+   "crlf_sha256_in_original_manifest": "2c749d03fae654603c64708001e5ba85662b76df0d28fa810fc27de3227cc110",
+   "where": "https://github.com/anthropics/mythos-5-incident-transcript @ 62858fc (not redistributed)"
+  },
+  "vocabulary_digest": {
+   "value": "0e9c16a046c2dc88930f27362d4e54c508d325b07a18db7dd2e0085fa8bdde61",
+   "note": "a digest of the pattern vocabulary, not of a file; unchanged"
+  }
+ },
+ "_checked": "2026-10-13: 19 of 21 file entries equal their original_manifest_value once LF is converted to CRLF (identical content, line endings only); the 2 noted entries changed after the kit froze."
+}
